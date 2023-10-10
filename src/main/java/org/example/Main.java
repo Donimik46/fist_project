@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.get("https://demoqa.com/text-box");
         driver.manage().window().maximize();
         WebElement userNameInput = driver.findElement(By.xpath("//input[@id='userName']"));
@@ -26,8 +26,19 @@ public class Main {
         userCurrentAddressInput.sendKeys("Курск");
         userPermanentAddressInput.sendKeys("Kursk");
         userConfirmButton.click();
-
-
+        String name;
+        WebElement userNameOutput = driver.findElement(By.xpath("//p[@id='name']"));
+        name = userNameOutput.getText();
+        String email;
+        WebElement userEmailOutput = driver.findElement(By.xpath("//p[@id='email']"));
+        email = userEmailOutput.getText();
+        String currentAddress;
+        WebElement userCurrentAddressOutput = driver.findElement(By.xpath("//p[@id='currentAddress']"));
+        currentAddress = userCurrentAddressOutput.getText();
+        String permanentAddress;
+        WebElement userPermanentAddressOutput = driver.findElement(By.xpath("//p[@id='permanentAddress']"));
+        permanentAddress = userPermanentAddressOutput.getText();
+        System.out.println(name + " " + email + " " + currentAddress + " " + permanentAddress + " ");
 
     }
 }
