@@ -2,6 +2,7 @@ package main_pages;
 
 import org.openqa.selenium.WebDriver;
 import pages.base.BasePage;
+import pages.elements.ElementsPage;
 
 public class MainPage extends BasePage {
     public MainPage(WebDriver driver) {
@@ -13,8 +14,9 @@ public class MainPage extends BasePage {
     public void openCategory(String categoryName){
         click(String.format(CATEGORY_BLOCKS_XPATH,categoryName));
     }
-    public void openCategoryElements(){
+    public ElementsPage openCategoryElements(){
         openCategory("Elements");
+        return new ElementsPage(driver);
     }
     public void openCategoryForms(){
         openCategory("Forms");
