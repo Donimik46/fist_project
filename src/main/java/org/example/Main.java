@@ -1,3 +1,4 @@
+/*
 package org.example;
 
 import org.openqa.selenium.By;
@@ -41,4 +42,4 @@ public class Main {
         System.out.println(name + " " + email + " " + currentAddress + " " + permanentAddress + " ");
 
     }
-}
+}*/

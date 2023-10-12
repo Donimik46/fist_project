@@ -1,4 +1,4 @@
-package browses;
+package browser;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
-import static browses.Config.BROWSER_TYPE;
+import static browser.Config.BROWSER_TYPE;
 import static constants.Constant.TimeoutVariable.IMPLICIT_WAIT;
 
 public class Browser {
@@ -26,8 +26,8 @@ public class Browser {
 
 
         }
-        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
+       // System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\drivers\\chromedriver.exe");
+       // driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
         driver.manage().window().maximize();
         return driver;

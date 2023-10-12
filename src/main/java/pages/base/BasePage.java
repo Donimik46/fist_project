@@ -23,7 +23,7 @@ public class BasePage {
     public WebElement findElement(String locator){
         WebElement element=driver.findElement(By.xpath(locator));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();",locator);
+        js.executeScript("arguments[0].scrollIntoView();",element);
         return element;
     }
     public List<WebElement> findElements(String locator){
