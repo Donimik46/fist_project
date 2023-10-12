@@ -26,8 +26,12 @@ public class Check_Box_Test {
     @Test
     public void step_01(){
         mainPage.openUrl("https://demoqa.com/checkbox");
+
+        mainPage.setCheckBox("Home", true);
         mainPage.setCheckBox("Home", true);
         Assert.assertTrue(mainPage.getCheckBoxState("Home"));
+        Assert.assertTrue(mainPage.getText("//div[@id='result']/span[1]").contains("You have selected"));
 
+//div[@id='result']/span[1]
     }
 }
