@@ -48,8 +48,13 @@ public class Wait_Test {
     }
     @Test
     public void step_02(){
+        String xpath = "//button[@id='enableAfter']";
         elementsPage.openStartPage();
         mainPage.openCategoryElements();
+        elementsPage.click("//span[text()='Dynamic Properties']");
+        new WebDriverWait(driver,Duration.ofSeconds(10))
+                .until(d -> elementsPage.findElement(xpath).isEnabled());
+        Assert.assertTrue(elementsPage.findElement(xpath).isEnabled());
 
     }
 }
